@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Container, Row } from "../styled/layoutComponents";
-import StyledEmojiExplorer from "../styled/styledEmojiExplorer";
+import StyledEmojiExplorer from "../styled/StyledEmojiExplorer";
 import { emojis } from "../../data";
 
 const EmojiExplorer = ({ siteTitle, className }) => {
