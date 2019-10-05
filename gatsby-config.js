@@ -29,14 +29,16 @@ const gatsbyConfig = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-netlify-cache",
+      options: {
+        cachePublic: true
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
-
-if (process.env.NETLIFY) {
-  gatsbyConfig.plugins.push('gatsby-plugin-remove-fingerprints')
 }
 
 module.exports = gatsbyConfig;
