@@ -29,12 +29,7 @@ const gatsbyConfig = {
       },
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: "gatsby-plugin-netlify-cache",
-      options: {
-        cachePublic: true
-      }
-    }
+    `gatsby-plugin-netlify-cache`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
