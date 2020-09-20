@@ -8,6 +8,9 @@ import { emojis } from "../../data";
 const EmojiExplorer = ({ siteTitle, className }) => {
   const [isOpen, setOpen] = useState(false)
   const [selected, setSelectedEmoji] = useState(emojis[0]);
+  const [searchValue, setSearchValue] = useState('');
+  
+  let filteredEmojis = emojis.filter(elem => elem.name.indexOf(searchValue) > -1);
 
   return (
     <StyledEmojiExplorer className={className}>
@@ -19,13 +22,16 @@ const EmojiExplorer = ({ siteTitle, className }) => {
             </pre>
           )
         }
+        <input type="text" onChange={evt => {
+          setSearchValue(evt.target.value)
+        }}/>
         <button onClick={() => setOpen(!isOpen)}>
           { isOpen ? '-' : '+'} Show Emojis
         </button>
         {
           isOpen && (
             <p>
-              {emojis.map((emoji, i) => (
+              {filteredEmojis.map((emoji, i) => (
                 <span
                   role="img"
                   key={i}
